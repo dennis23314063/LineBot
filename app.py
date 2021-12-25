@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from linebot import LineBotApi, WebhookParser
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
+from werkzeug.wrappers import response
 
 from fsm import TocMachine
 from utils import send_text_message, send_image_url
@@ -72,7 +73,7 @@ def callback():
             continue
 
         line_bot_api.reply_message(
-            event.reply_token, TextSendMessage(text=event.message.text)
+            event.reply_token, TextSendMessage(text=response)#event.message.text)
         )
 
     return "OK"
