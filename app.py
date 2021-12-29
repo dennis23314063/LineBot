@@ -9,32 +9,60 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 from werkzeug.wrappers import response
 from function import get_url
 from fsm import TocMachine
+from machine import multiple_machine
 from utils import send_text_message, send_image_url
+from machine import multiple_machine
 load_dotenv()
 
-
+person_machine = {}
 machine = TocMachine(
-    states=["user", "state1", "state2"],
+    states=["user", "menu", "introduction","draw","fsm"],
     transitions=[
         {
             "trigger": "advance",
             "source": "user",
-            "dest": "state1",
-            "conditions": "is_going_to_state1",
+            "dest": "menu",
+            "conditions": "is_going_to_menu",
         },
         {
             "trigger": "advance",
-            "source": "user",
-            "dest": "state2",
-            "conditions": "is_going_to_state2",
+            "source": "menu",
+            "dest": "introduction",
+            "conditions": "is_going_to_introduction",
         },
-        {"trigger": "go_back", "source": ["state1", "state2"], "dest": "user"},
-        
+        {
+            "trigger": "go_back",
+            "source":["introduction","fsm"],
+            "dest": "menu"
+        },
+        {
+            "trigger": "go_back",
+            "source":"draw",
+            "dest": "draw"
+        },
+        {
+            "trigger": "advance",
+            "source":"menu",
+            "dest": "fsm",
+            "conditions": "is_going_to_fsm",
+        },
+        {
+            "trigger": "advance",
+            "source":"menu",
+            "dest": "draw",
+            "conditions": "is_going_to_draw",
+        },
+        {
+            "trigger": "advance",
+            "source":"draw",
+            "dest": "menu",
+            "conditions": "is_going_to_menu",
+        },
     ],
     initial="user",
     auto_transitions=False,
     show_conditions=True,
-)
+    )
 
 app = Flask(__name__, static_url_path="")
 # get channel_secret and channel_access_token from your environment variable
@@ -100,9 +128,9 @@ def webhook_handler():
             continue
         if not isinstance(event.message.text, str):
             continue
-        print(f"\nFSM STATE: {machine.state}")
-        print(f"REQUEST BODY: \n{body}")
-        response = machine.advance(event)
+        if event.source.user_id not in person_machine:
+            person_machine[event.source.user_id]=multiple_machine
+        response = person_machine[event.source.user_id].advance(event)
         if response == False:
             send_text_message(event.reply_token, "Not Entering any State")
             
@@ -116,6 +144,7 @@ def show_fsm():
     return send_file('fsm.png',mimetype='image/png')
 
 if __name__ == "__main__":
+    show_fsm()
     port = os.environ.get("PORT", 8000)
     app.run(host="0.0.0.0", port=port, debug=True)
     
