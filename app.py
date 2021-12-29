@@ -33,7 +33,7 @@ machine = TocMachine(
         {
             "trigger": "go_back",
             "source":["introduction","fsm","draw","menu"],
-            "dest": "user"
+            "dest": "menu"
         },
         {
             "trigger": "advance",
