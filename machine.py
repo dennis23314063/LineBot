@@ -11,13 +11,19 @@ def multiple_machine():
         },
         {
             "trigger": "advance",
+            "source": "menu",
+            "dest": "menu",
+            "conditions": "is_going_to_menu",
+        },
+        {
+            "trigger": "advance",
             "source": "user",
             "dest": "menu",
             "conditions": "is_going_to_menu",
         },
         {
             "trigger": "go_back",
-            "source":["introduction","fsm","draw","menu"],
+            "source":["introduction","fsm","draw"],
             "dest": "menu"
         },
         {

@@ -26,13 +26,19 @@ machine = TocMachine(
         },
         {
             "trigger": "advance",
+            "source": "menu",
+            "dest": "menu",
+            "conditions": "is_going_to_menu",
+        },
+        {
+            "trigger": "advance",
             "source": "user",
             "dest": "menu",
             "conditions": "is_going_to_menu",
         },
         {
             "trigger": "go_back",
-            "source":["introduction","fsm","draw","menu"],
+            "source":["introduction","fsm","draw",],
             "dest": "menu"
         },
         {
@@ -132,7 +138,7 @@ def show_fsm():
     return send_file('fsm.png',mimetype='image/png')
 
 if __name__ == "__main__":
-    # show_fsm()
+    show_fsm()
     port = os.environ.get("PORT", 8000)
     app.run(host="0.0.0.0", port=port, debug=True)
     
