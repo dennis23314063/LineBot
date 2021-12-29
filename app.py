@@ -116,7 +116,6 @@ def show_fsm():
     return send_file('fsm.png',mimetype='image/png')
 
 if __name__ == "__main__":
-    show_fsm()
     port = os.environ.get("PORT", 8000)
     app.run(host="0.0.0.0", port=port, debug=True)
     
