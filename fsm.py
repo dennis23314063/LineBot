@@ -21,26 +21,17 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text.lower() == "draw" or text.lower() == "抽"
     def on_enter_menu(self, event):
-        print("I'm entering state1")
         reply_token = event.reply_token
         send_text_message(reply_token, "menu")
     def on_enter_fsm(self, event):
-        print("I'm entering state1")
         reply_token = event.reply_token
         send_image_url(reply_token,"https://github.com/dennis23314063/test/blob/master/fsm.png?raw=true")
         self.go_back()
     def on_enter_draw(self, event):
-        print("I'm entering state1")
         reply_token = event.reply_token
         send_image_url(reply_token,get_url())
         self.go_back()
-    # def on_exit_menu(self,event):
-    #     print("Leaving state1")
     def on_enter_introduction(self, event):
-        print("I'm entering state2")
         reply_token = event.reply_token
         send_text_message(reply_token, "introduction")
         self.go_back()
-
-    # def on_exit_introduction(self,event):
-    #     print("Leaving state2")
