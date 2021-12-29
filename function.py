@@ -1,7 +1,7 @@
 import requests
 import re
 import random
-from beautifulsoup4 import BeautifulSoup
+from bs4 import BeautifulSoup
 
 PTT_url = 'https://www.ptt.cc'
 def get_webPage(url):
