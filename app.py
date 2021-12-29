@@ -29,14 +29,9 @@ machine = TocMachine(
             "conditions": "is_going_to_state2",
         },
         {"trigger": "go_back", "source": ["state1", "state2"], "dest": "user"},
-        {
-            "trigger": "advance",
-            "source": "user",
-            "dest": "state1",
-            "conditions": "is_going_to_state1",
-        },
+        
     ],
-    initial="new",
+    initial="user",
     auto_transitions=False,
     show_conditions=True,
 )
@@ -121,6 +116,8 @@ def show_fsm():
     return send_file('fsm.png',mimetype='image/png')
 
 if __name__ == "__main__":
+    show_fsm()
     port = os.environ.get("PORT", 8000)
     app.run(host="0.0.0.0", port=port, debug=True)
+    
     
