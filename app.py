@@ -20,26 +20,20 @@ machine = TocMachine(
     transitions=[
         {
             "trigger": "advance",
-            "source": "user",
-            "dest": "menu",
-            "conditions": "is_going_to_menu",
-        },
-        {
-            "trigger": "advance",
             "source": "menu",
             "dest": "introduction",
             "conditions": "is_going_to_introduction",
         },
         {
+            "trigger": "lambda",
+            "source": "user",
+            "dest": "menu",
+        },
+        {
             "trigger": "go_back",
-            "source":["introduction","fsm","draw"],
+            "source":["introduction","fsm","draw","menu"],
             "dest": "user"
         },
-        # {
-        #     "trigger": "go_back",
-        #     "source":"draw",
-        #     "dest": "draw"
-        # },
         {
             "trigger": "advance",
             "source":"menu",
@@ -52,12 +46,6 @@ machine = TocMachine(
             "dest": "draw",
             "conditions": "is_going_to_draw",
         },
-        # {
-        #     "trigger": "advance",
-        #     "source":"draw",
-        #     "dest": "menu",
-        #     "conditions": "is_going_to_menu",
-        # },
     ],
     initial="user",
     auto_transitions=False,

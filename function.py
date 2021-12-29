@@ -25,7 +25,7 @@ def get_articles(page):
 def get_url():
     allArticles = []
     currentPage = get_webPage(PTT_url+'/bbs/Pet_Get/index.html')
-    randPage = random.randrange(1,11)
+    randPage = random.randrange(2,11)
     randArticle = random.randrange(1,11)
     for i in range(randPage):
         articles, prevURL = get_articles(currentPage)

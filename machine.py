@@ -20,11 +20,7 @@ def multiple_machine():
             "source":["introduction","fsm","draw"],
             "dest": "user"
         },
-        # {
-        #     "trigger": "go_back",
-        #     "source":"draw",
-        #     "dest": "draw"
-        # },
+
         {
             "trigger": "advance",
             "source":"menu",

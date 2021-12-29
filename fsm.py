@@ -33,5 +33,5 @@ class TocMachine(GraphMachine):
         self.go_back()
     def on_enter_introduction(self, event):
         reply_token = event.reply_token
-        send_text_message(reply_token, "introduction")
+        send_text_message(reply_token, "輸入menu叫出主選單\n"+"輸入fsm看看本機器人的state圖\n"+"輸入draw或抽得到一隻可愛的動物")
         self.go_back()
