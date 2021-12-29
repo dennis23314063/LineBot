@@ -5,22 +5,21 @@ def multiple_machine():
     transitions=[
         {
             "trigger": "advance",
-            "source": "user",
-            "dest": "menu",
-            "conditions": "is_going_to_menu",
-        },
-        {
-            "trigger": "advance",
             "source": "menu",
             "dest": "introduction",
             "conditions": "is_going_to_introduction",
         },
         {
-            "trigger": "go_back",
-            "source":["introduction","fsm","draw"],
-            "dest": "user"
+            "trigger": "advance",
+            "source": "user",
+            "dest": "menu",
+            "conditions": "is_going_to_menu",
         },
-
+        {
+            "trigger": "go_back",
+            "source":["introduction","fsm","draw","menu"],
+            "dest": "menu"
+        },
         {
             "trigger": "advance",
             "source":"menu",
@@ -33,12 +32,6 @@ def multiple_machine():
             "dest": "draw",
             "conditions": "is_going_to_draw",
         },
-        # {
-        #     "trigger": "advance",
-        #     "source":"draw",
-        #     "dest": "menu",
-        #     "conditions": "is_going_to_menu",
-        # },
     ],
     initial="user",
     auto_transitions=False,
