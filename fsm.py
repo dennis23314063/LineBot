@@ -19,7 +19,7 @@ class TocMachine(GraphMachine):
         return text.lower() == "fsm"
     def is_going_to_draw(self,event):
         text = event.message.text
-        return text.lower() == "draw" or text.lower() == "抽"
+        return text.lower() == "draw" or text == "抽"
     def on_enter_menu(self, event):
         reply_token = event.reply_token
         send_text_message(reply_token, "menu")

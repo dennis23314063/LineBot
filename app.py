@@ -128,7 +128,7 @@ def webhook_handler():
         if not isinstance(event.message.text, str):
             continue
         if event.source.user_id not in person_machine:
-            person_machine[event.source.user_id]=multiple_machine
+            person_machine[event.source.user_id]=multiple_machine()
         response = person_machine[event.source.user_id].advance(event)
         if response == False:
             send_text_message(event.reply_token, "Not Entering any State")
