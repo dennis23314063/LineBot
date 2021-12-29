@@ -17,14 +17,14 @@ def multiple_machine():
         },
         {
             "trigger": "go_back",
-            "source":["introduction","fsm"],
-            "dest": "menu"
+            "source":["introduction","fsm","draw"],
+            "dest": "user"
         },
-        {
-            "trigger": "go_back",
-            "source":"draw",
-            "dest": "draw"
-        },
+        # {
+        #     "trigger": "go_back",
+        #     "source":"draw",
+        #     "dest": "draw"
+        # },
         {
             "trigger": "advance",
             "source":"menu",
@@ -37,12 +37,12 @@ def multiple_machine():
             "dest": "draw",
             "conditions": "is_going_to_draw",
         },
-        {
-            "trigger": "advance",
-            "source":"draw",
-            "dest": "menu",
-            "conditions": "is_going_to_menu",
-        },
+        # {
+        #     "trigger": "advance",
+        #     "source":"draw",
+        #     "dest": "menu",
+        #     "conditions": "is_going_to_menu",
+        # },
     ],
     initial="user",
     auto_transitions=False,
