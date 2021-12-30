@@ -4,12 +4,7 @@
     "type": "image",
     "size": "full",
     "aspectRatio": "20:15",
-    "action": {
-      "type": "message",
-      "label": "name",
-      "text": "我的名字叫Ics 讀做Isaac"
-    },
-    "url": "https://imgur.com/jTCMmSM",
+    "url": "https://github.com/dennis23314063/test/blob/master/img/icon.jpg?raw=true",
     "position": "relative",
     "aspectMode": "cover",
     "animated": false
@@ -20,7 +15,7 @@
     "contents": [
       {
         "type": "text",
-        "text": "Menu",
+        "text": "MENU",
         "weight": "bold",
         "size": "xl",
         "align": "center"
