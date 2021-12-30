@@ -1,8 +1,6 @@
 from transitions.extensions import GraphMachine
 from function import get_url
-from utils import send_image_url, send_text_message
-
-
+from utils import send_flex_message, send_image_url, send_text_message
 
 class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
@@ -22,7 +20,7 @@ class TocMachine(GraphMachine):
         return text.lower() == "draw" or text == "抽"
     def on_enter_menu(self, event):
         reply_token = event.reply_token
-        send_text_message(reply_token, "menu")
+        send_flex_message(reply_token,'menu')
     def on_enter_fsm(self, event):
         reply_token = event.reply_token
         send_image_url(reply_token,"https://github.com/dennis23314063/test/blob/master/fsm.png?raw=true")
@@ -33,5 +31,5 @@ class TocMachine(GraphMachine):
         self.go_back()
     def on_enter_introduction(self, event):
         reply_token = event.reply_token
-        send_text_message(reply_token, "輸入menu叫出主選單\n"+"輸入fsm看看本機器人的state圖\n"+"輸入draw或抽得到一隻可愛的動物")
+        send_text_message(reply_token, "輸入 menu 叫出主選單\n"+"輸入 fsm 看看本機器人的state圖\n"+"輸入 draw 或 抽 得到一隻可愛的動物")
         self.go_back()

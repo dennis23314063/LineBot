@@ -126,7 +126,7 @@ def webhook_handler():
             person_machine[event.source.user_id]=multiple_machine()
         response = person_machine[event.source.user_id].advance(event)
         if response == False:
-            send_text_message(event.reply_token, "Not Entering any State")
+            send_text_message(event.reply_token,"我有點聽不懂欸，要不要打打看menu!")
             
 
     return "OK"
