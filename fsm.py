@@ -23,7 +23,7 @@ class TocMachine(GraphMachine):
         send_flex_message(reply_token,'menu')
     def on_enter_fsm(self, event):
         reply_token = event.reply_token
-        send_image_url(reply_token,"https://github.com/dennis23314063/test/blob/master/fsm.png?raw=true")
+        send_image_url(reply_token,"https://i.imgur.com/NtpgS7N.png")
         self.go_back()
     def on_enter_draw(self, event):
         reply_token = event.reply_token
