@@ -46,3 +46,4 @@ def get_url():
                 return imgLinks[0]['href']
             else:
                 count-=1;
+    return 'https://imgur.com/inE9TKd'
