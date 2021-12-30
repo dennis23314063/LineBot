@@ -1,67 +1,70 @@
 {
-    "type": "bubble",
-    "hero": {
-      "type": "image",
-      "size": "full",
-      "aspectRatio": "20:13",
-      "aspectMode": "cover",
-      "action": {
-        "type": "uri",
-        "uri": "http://linecorp.com/"
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "size": "full",
+    "aspectRatio": "20:15",
+    "action": {
+      "type": "message",
+      "label": "name",
+      "text": "我的名字叫Ics 讀做Isaac"
+    },
+    "url": "https://imgur.com/jTCMmSM",
+    "position": "relative",
+    "aspectMode": "cover",
+    "animated": false
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "Menu",
+        "weight": "bold",
+        "size": "xl",
+        "align": "center"
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "message",
+          "label": "fsm",
+          "text": "fsm"
+        }
       },
-      "url": "https://imgur.com/jTCMmSM"
-    },
-    "body": {
-      "type": "box",
-      "layout": "vertical",
-      "contents": [
-        {
-          "type": "text",
-          "text": "Menu",
-          "weight": "bold",
-          "size": "xl",
-          "align": "center"
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "message",
+          "label": "draw an animal picture",
+          "text": "draw"
         }
-      ]
-    },
-    "footer": {
-      "type": "box",
-      "layout": "vertical",
-      "spacing": "sm",
-      "contents": [
-        {
-          "type": "button",
-          "style": "link",
-          "height": "sm",
-          "action": {
-            "type": "message",
-            "label": "fsm",
-            "text": "fsm"
-          }
-        },
-        {
-          "type": "button",
-          "style": "link",
-          "height": "sm",
-          "action": {
-            "type": "message",
-            "label": "draw an animal picture",
-            "text": "draw"
-          }
-        },
-        {
-          "type": "button",
-          "action": {
-            "type": "message",
-            "text": "how",
-            "label": "introduction"
-          }
-        },
-        {
-          "type": "spacer",
-          "size": "sm"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "how",
+          "label": "introduction"
         }
-      ],
-      "flex": 0
-    }
+      },
+      {
+        "type": "spacer",
+        "size": "sm"
+      }
+    ],
+    "flex": 0
   }
+}
