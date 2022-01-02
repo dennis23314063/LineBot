@@ -7,6 +7,8 @@
 	使用heroku建立雲端伺服器，讓本地端不用開著。
 * Crawling:  
 	使用爬蟲抓PTT Pet_Get 版裡面的圖片。
+* multiple user:  
+	利用hash table 支援多人同時使用。
 ## Setup
 
 ### Prerequisite
