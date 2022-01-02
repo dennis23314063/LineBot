@@ -94,7 +94,7 @@ The robot is able to function normally with a lot of people at the same time.
 		* Reply:  
 		![fsm](./img/show-fsm.png)
 	* Input: "how"
-		* Reply:
+		* Reply:  
 		"輸入 menu 叫出主選單  
 		 輸入 fsm 看看本機器人的state圖  
 		 輸入 draw 或 抽 得到一隻可愛的動物"
