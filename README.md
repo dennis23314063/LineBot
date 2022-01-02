@@ -90,8 +90,8 @@ Every time `menu` state is triggered to `advance` to another state, it will `go_
 		* Reply:![fsm](./img/show-fsm.png)
 	* Input: "how"
 		* Reply:
-		"輸入 menu 叫出主選單
-		 輸入 fsm 看看本機器人的state圖
+		"輸入 menu 叫出主選單\
+		 輸入 fsm 看看本機器人的state圖\
 		 輸入 draw 或 抽 得到一隻可愛的動物"
 	* Input: "draw" or "抽"
 		* Reply:![draw](./img/draw_example.png)
