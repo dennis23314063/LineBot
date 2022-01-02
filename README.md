@@ -1,4 +1,4 @@
-# TOC Project 2020
+# TOC Project 2021
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/dc7fa47fcd809b99d087/maintainability)](https://codeclimate.com/github/NCKU-CCS/TOC-Project-2020/maintainability)
 
@@ -76,14 +76,25 @@ Or You can use [servo](http://serveo.net/) to expose local servers to the intern
 ## Usage
 The initial state is set to `user`.
 
-Every time `user` state is triggered to `advance` to another state, it will `go_back` to `user` state after the bot replies corresponding message.
+when the first time enter the `menu`, the state mechine will remain in the 'menu'.
+
+Every time `menu` state is triggered to `advance` to another state, it will `go_back` to `menu` state after the bot replies corresponding message.
 
 * user
-	* Input: "go to state1"
-		* Reply: "I'm entering state1"
-
-	* Input: "go to state2"
-		* Reply: "I'm entering state2"
+	* Input: "menu"
+		* Reply:![menu](./img/menu.png)
+* menu
+	* Input: "menu"
+		* Reply:ditto
+	* Input: "fsm"
+		* Reply:![fsm](./img/show-fsm.png)
+	* Input: "how"
+		* Reply:"輸入 menu 叫出主選單\
+				 輸入 fsm 看看本機器人的state圖\
+				 輸入 draw 或 抽 得到一隻可愛的動物"
+	* Input: "draw" or "抽"
+		* Reply:
+			* example:![draw](./img/draw_example.png)
 
 ## Deploy
 Setting to deploy webhooks on Heroku.
