@@ -1,16 +1,11 @@
 # TOC Project 2021
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/dc7fa47fcd809b99d087/maintainability)](https://codeclimate.com/github/NCKU-CCS/TOC-Project-2020/maintainability)
-
-[![Known Vulnerabilities](https://snyk.io/test/github/NCKU-CCS/TOC-Project-2020/badge.svg)](https://snyk.io/test/github/NCKU-CCS/TOC-Project-2020)
-
-
-Template Code for TOC Project 2020
-
-A Line bot based on a finite state machine
-
-More details in the [Slides](https://hackmd.io/@TTW/ToC-2019-Project#) and [FAQ](https://hackmd.io/s/B1Xw7E8kN)
-
+## introduction
+	小雷機器人在幾年前橫行一時，又突然消聲匿跡，很想念可以抽卡的機器人，原本想要爬寵物版的，但是寵物版反而圖片很少不知道為什麼，所以就決定爬寵物領養版，可愛度不減。
+## Tech
+* Deploy:  
+	使用heroku建立雲端伺服器，讓本地端不用開著。
+* crawling :
+	使用爬蟲抓PTT Pet_Get 版裡面的圖片。
 ## Setup
 
 ### Prerequisite
