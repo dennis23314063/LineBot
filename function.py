@@ -10,13 +10,12 @@ def get_webPage(url):
  
 def get_articles(page):
     soup = BeautifulSoup(page,'html.parser')   
-    #上一頁連結位置
     prevURL = soup.select('.btn-group-paging a')[1]['href']
     articles = []
     divs = soup.select('.r-ent')
     for article in divs:        
         if article.find('a'):
-            href = article.find('a')['href'] #取得文章連結
+            href = article.find('a')['href']
             articles.append({
                 'href':href
             })
@@ -34,14 +33,11 @@ def get_url():
     count=0
     for article in allArticles:
         count+=1;
-        # 再次進入文章，進行圖片爬取
         if count==randArticle:
             url = PTT_url+article['href']
             newRequest = get_webPage(url)
             soup = BeautifulSoup(newRequest,'html.parser')  
-            # 找尋符合的 img 圖片網址
-            imgLinks = soup.findAll('a',{'href':re.compile('https:\/\/(imgur|i\.imgur)\.com\/.*.jpg$')})
-            # 依照文章標題建立資料夾   
+            imgLinks = soup.findAll('a',{'href':re.compile('https:\/\/(imgur|i\.imgur)\.com\/.*.jpg$')})   
             if len(imgLinks)>0:
                 return imgLinks[0]['href']
             else:
